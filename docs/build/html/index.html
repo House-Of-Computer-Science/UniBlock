@@ -1,0 +1,568 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Documentation for UniBlock &#8212; UniBlock 1.0.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="documentation-for-uniblock">
+<h1>Documentation for UniBlock<a class="headerlink" href="#documentation-for-uniblock" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="module-main">
+<span id="uniblock-main"></span><h2>UniBlock Main<a class="headerlink" href="#module-main" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="main.main">
+<code class="descclassname">main.</code><code class="descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/main.html#main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#main.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Função principal do programa.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="main.parseArguments">
+<code class="descclassname">main.</code><code class="descname">parseArguments</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/main.html#parseArguments"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#main.parseArguments" title="Permalink to this definition">¶</a></dt>
+<dd><p>Função que identifica os argumentos passados.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">parser – objetos contendo os argumentos.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="uniblock-comunnication">
+<h2>UniBlock Comunnication<a class="headerlink" href="#uniblock-comunnication" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-comunnication"></span><dl class="class">
+<dt id="comunnication.Connection">
+<em class="property">class </em><code class="descclassname">comunnication.</code><code class="descname">Connection</code><span class="sig-paren">(</span><em>myIp</em>, <em>listClients</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/comunnication.html#Connection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#comunnication.Connection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Classe base para conexoes</p>
+<dl class="method">
+<dt id="comunnication.Connection.getMinersAndTraders">
+<code class="descname">getMinersAndTraders</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/comunnication.html#Connection.getMinersAndTraders"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#comunnication.Connection.getMinersAndTraders" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adiciona nas respectivas listas os ips que são mineradores e ips que são traders.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="comunnication.Connection.listenConnection">
+<code class="descname">listenConnection</code><span class="sig-paren">(</span><em>port=5055</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/comunnication.html#Connection.listenConnection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#comunnication.Connection.listenConnection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Coloca o servidor para rodar de fato.
+Após, fica escutando a porta e quando chegar alguma conexão, cria um thread para o cliente.
+Trata envia para a função que irá tratar a requisição.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>Ip</strong> – Endereço Ip que o servidor irá rodar</li>
+<li><strong>Port</strong> – Porta em que o servidor irá rodar</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="comunnication.Connection.myIp">
+<code class="descname">myIp</code><a class="headerlink" href="#comunnication.Connection.myIp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Metodo getter do myIp.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">str – ip.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="comunnication.Connection.printClients">
+<code class="descname">printClients</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/comunnication.html#Connection.printClients"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#comunnication.Connection.printClients" title="Permalink to this definition">¶</a></dt>
+<dd><p>Imprime na tela a lista de clientes mineradores e a lista de clientes negociadores.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="comunnication.Miner">
+<em class="property">class </em><code class="descclassname">comunnication.</code><code class="descname">Miner</code><span class="sig-paren">(</span><em>myIp</em>, <em>listClients</em>, <em>rich</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/comunnication.html#Miner"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#comunnication.Miner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Classe do minerador.</p>
+<dl class="method">
+<dt id="comunnication.Miner.filterCommunication">
+<code class="descname">filterCommunication</code><span class="sig-paren">(</span><em>conn</em>, <em>addr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/comunnication.html#Miner.filterCommunication"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#comunnication.Miner.filterCommunication" title="Permalink to this definition">¶</a></dt>
+<dd><p>Trata as conexões dos clients… Recebe uma mensagem, filtra e envia uma resposta de acordo ou executa ações.</p>
+<p>TypeOfClient =&gt; retorna se o cliente é um minerador ou um negociador.
+Rich =&gt; retorna se o cliente é um minerador que está armazenando transações na carteira.
+NewTransaction =&gt; recebe uma nova transação a ser adicionada na carteira.
+NewBlock =&gt; recebe a noticia que a chain foi atualizada, entao o cliente deve validar a sua chain.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>conn</strong> – Socket de conexão com o cliente</li>
+<li><strong>addr</strong> – Endereço da conexão deste cliente</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="comunnication.Miner.sendBlock">
+<code class="descname">sendBlock</code><span class="sig-paren">(</span><em>block</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/comunnication.html#Miner.sendBlock"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#comunnication.Miner.sendBlock" title="Permalink to this definition">¶</a></dt>
+<dd><p>Envia o ultimo bloco minerado para todos na rede.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>block</strong> – ultimo bloco minerado.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="comunnication.Miner.sendTransactionsToMiners">
+<code class="descname">sendTransactionsToMiners</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/comunnication.html#Miner.sendTransactionsToMiners"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#comunnication.Miner.sendTransactionsToMiners" title="Permalink to this definition">¶</a></dt>
+<dd><p>Envia as transacoes para os mineradores.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="comunnication.Trader">
+<em class="property">class </em><code class="descclassname">comunnication.</code><code class="descname">Trader</code><span class="sig-paren">(</span><em>myIp</em>, <em>listClients</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/comunnication.html#Trader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#comunnication.Trader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Classe do usuario comum.</p>
+<dl class="method">
+<dt id="comunnication.Trader.discoverMiner">
+<code class="descname">discoverMiner</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/comunnication.html#Trader.discoverMiner"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#comunnication.Trader.discoverMiner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Método que descobre qual o minerador que está aceitando transações para adicionar na carteira.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="comunnication.Trader.filterCommunication">
+<code class="descname">filterCommunication</code><span class="sig-paren">(</span><em>conn</em>, <em>addr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/comunnication.html#Trader.filterCommunication"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#comunnication.Trader.filterCommunication" title="Permalink to this definition">¶</a></dt>
+<dd><p>Trata as conexões dos clients… Recebe uma mensagem, filtra e envia uma resposta.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>conn</strong> – Socket de conexão com o cliente.</li>
+<li><strong>addr</strong> – Endereço da conexão deste cliente.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="comunnication.Trader.runMethods">
+<code class="descname">runMethods</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/comunnication.html#Trader.runMethods"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#comunnication.Trader.runMethods" title="Permalink to this definition">¶</a></dt>
+<dd><p>Metodo em loop que fica pedindo ao usuário o texto que deve ser adicionado na chain.
+Esta função acaba criando uma cadeia de chamadas de funções.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="comunnication.Trader.sendToMiner">
+<code class="descname">sendToMiner</code><span class="sig-paren">(</span><em>transaction</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/comunnication.html#Trader.sendToMiner"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#comunnication.Trader.sendToMiner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Envia a transação para o minerador.
+Utiliza pickle para serializar o dado e enviar.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>transaction</strong> – Transaction.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="comunnication.Trader.userInput">
+<code class="descname">userInput</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/comunnication.html#Trader.userInput"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#comunnication.Trader.userInput" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inicia a transação.
+Descobre o ip do minerador que está com a flag rich.
+Envia esta transação para o minerador com a flag rich.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="uniblock-blockchain">
+<h2>UniBlock BlockChain<a class="headerlink" href="#uniblock-blockchain" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-BlockChain"></span><dl class="class">
+<dt id="BlockChain.BlockChain">
+<em class="property">class </em><code class="descclassname">BlockChain.</code><code class="descname">BlockChain</code><a class="reference internal" href="_modules/BlockChain.html#BlockChain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#BlockChain.BlockChain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Classe pai da blockchain.
+Implementa os metodos essenciais para a blockchain.</p>
+<dl class="attribute">
+<dt id="BlockChain.BlockChain.chain">
+<code class="descname">chain</code><a class="headerlink" href="#BlockChain.BlockChain.chain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Metodo getter para a cadeia de blocos.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">list – cadeia de blocos.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="BlockChain.BlockChain.hash">
+<em class="property">static </em><code class="descname">hash</code><span class="sig-paren">(</span><em>block</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BlockChain.html#BlockChain.hash"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#BlockChain.BlockChain.hash" title="Permalink to this definition">¶</a></dt>
+<dd><p>Metodo estatico que gera a hash do bloco.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>block</strong> – bloco da cadeia de blocos.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">str – hash do bloco.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="BlockChain.BlockChain.last_block">
+<code class="descname">last_block</code><a class="headerlink" href="#BlockChain.BlockChain.last_block" title="Permalink to this definition">¶</a></dt>
+<dd><p>Metodo getter para o ultimo bloco da chain.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">list – ultimo bloco da cadeia de blocos.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="BlockChain.BlockChain.last_proof">
+<code class="descname">last_proof</code><a class="headerlink" href="#BlockChain.BlockChain.last_proof" title="Permalink to this definition">¶</a></dt>
+<dd><p>Metodo getter para a ultima prova de trabalho adicionada na chain.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">int – ultima prova de trabalho.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="BlockChain.BlockChain.rule">
+<code class="descname">rule</code><a class="headerlink" href="#BlockChain.BlockChain.rule" title="Permalink to this definition">¶</a></dt>
+<dd><p>Metodo getter para a regra da prova de trabalho.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">int – regra da prova de trabalho.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="BlockChain.BlockChain.valid_chain">
+<code class="descname">valid_chain</code><span class="sig-paren">(</span><em>chain</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BlockChain.html#BlockChain.valid_chain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#BlockChain.BlockChain.valid_chain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Confere se a chain eh valida atraves das hashs da chain.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>chain</strong> – cadeia de blocos.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">bool – flag da validade do ultimo bloco da cadeia de blocos.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="BlockChain.BlockChain.valid_proof">
+<em class="property">static </em><code class="descname">valid_proof</code><span class="sig-paren">(</span><em>last_proof</em>, <em>proof</em>, <em>rule</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BlockChain.html#BlockChain.valid_proof"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#BlockChain.BlockChain.valid_proof" title="Permalink to this definition">¶</a></dt>
+<dd><p>Metodo estatico que valida a proof gerada.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>last_proof</strong> – ultima prova.</li>
+<li><strong>proof</strong> – prova atual.</li>
+<li><strong>rule</strong> – regra da prova de trabalho.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">bool – flag da prova de trabalho gerada.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="BlockChain.MinerChain">
+<em class="property">class </em><code class="descclassname">BlockChain.</code><code class="descname">MinerChain</code><a class="reference internal" href="_modules/BlockChain.html#MinerChain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#BlockChain.MinerChain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Classe que extende a classe BlockChain
+Classe que implementa os metodos da chain utilizada pelos mineradores da blockchain</p>
+<dl class="attribute">
+<dt id="BlockChain.MinerChain.block">
+<code class="descname">block</code><a class="headerlink" href="#BlockChain.MinerChain.block" title="Permalink to this definition">¶</a></dt>
+<dd><p>Metodo getter do block.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">list – bloco da cadeia de blocos.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="BlockChain.MinerChain.current_transactions">
+<code class="descname">current_transactions</code><a class="headerlink" href="#BlockChain.MinerChain.current_transactions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Metodo getter para as transacoes atuais.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict – transacao atual.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="BlockChain.MinerChain.finish_transactions">
+<code class="descname">finish_transactions</code><a class="headerlink" href="#BlockChain.MinerChain.finish_transactions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Metodo getter para as transacoes fechadas.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict – transacao.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="BlockChain.MinerChain.mine">
+<code class="descname">mine</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/BlockChain.html#MinerChain.mine"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#BlockChain.MinerChain.mine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Minera a carteira se ja estiver pronto para minerar.
+Muda a flag para false e retorna o block minerado.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="BlockChain.MinerChain.new_block">
+<code class="descname">new_block</code><span class="sig-paren">(</span><em>proof</em>, <em>previous_hash=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BlockChain.html#MinerChain.new_block"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#BlockChain.MinerChain.new_block" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cria um novo bloco com as informacoes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>proof</strong> – prova de trabalho.</li>
+<li><strong>previous_hash</strong> – hash do bloco anterior.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">dict – novo bloco.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="BlockChain.MinerChain.new_transaction">
+<code class="descname">new_transaction</code><span class="sig-paren">(</span><em>transaction</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BlockChain.html#MinerChain.new_transaction"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#BlockChain.MinerChain.new_transaction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Metodo que recebe uma nova transacao e adiciona nas transacoes atuais.
+Se o numero maximo de transacoes da carteira for atingido.
+Uma nova carteira e adicionada na lista de transacoes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>transaction</strong> – nova transacao.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">int – indice do proximo bloco.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="BlockChain.MinerChain.proof_of_work">
+<code class="descname">proof_of_work</code><span class="sig-paren">(</span><em>last_proof</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BlockChain.html#MinerChain.proof_of_work"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#BlockChain.MinerChain.proof_of_work" title="Permalink to this definition">¶</a></dt>
+<dd><p>Metodo de prova de trabalho.
+Determina a dificuldade de minerar um block.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>last_proof</strong> – ultima prova de trabalho.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">int – prova de trabalho.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="BlockChain.MinerChain.start_miner">
+<code class="descname">start_miner</code><a class="headerlink" href="#BlockChain.MinerChain.start_miner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Metodo getter para retornar o valor da flag _start_miner.
+Responsavel por dizer (return True) quando uma carteira esta pronta para ser minerada.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">bool – flag de inicio da mineracao.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="BlockChain.MinerChain.transactions">
+<code class="descname">transactions</code><a class="headerlink" href="#BlockChain.MinerChain.transactions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Metodo getter para as transacoes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">list – lista de transacoes.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="BlockChain.TraderChain">
+<em class="property">class </em><code class="descclassname">BlockChain.</code><code class="descname">TraderChain</code><a class="reference internal" href="_modules/BlockChain.html#TraderChain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#BlockChain.TraderChain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Classe que implementa a chain dos traders</p>
+<dl class="method">
+<dt id="BlockChain.TraderChain.new_transaction">
+<code class="descname">new_transaction</code><span class="sig-paren">(</span><em>myIp</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BlockChain.html#TraderChain.new_transaction"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#BlockChain.TraderChain.new_transaction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cria uma nova transacao que sera enviada para a carteira ativa</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>myIp</strong> – ip da maquina.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">dict – lista de transacoes.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Documentation for UniBlock</a><ul>
+<li><a class="reference internal" href="#module-main">UniBlock Main</a></li>
+<li><a class="reference internal" href="#uniblock-comunnication">UniBlock Comunnication</a></li>
+<li><a class="reference internal" href="#uniblock-blockchain">UniBlock BlockChain</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, UniBlock.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
